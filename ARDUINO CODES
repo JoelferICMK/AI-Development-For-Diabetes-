@@ -1,1 +1,22 @@
-body {DITO PARA SA PHYSICAL FUNCTIONS}
+#include <Servo.h>   // Include the Servo library
+
+Servo myServo;       // Create a Servo object
+const int buttonPin = 2;  // Pin number for the button
+int buttonState = 0;      // Variable to store button state
+
+void setup() {
+  myServo.attach(9);   // Attach the servo control to pin 9
+  pinMode(buttonPin, INPUT_PULLUP);  // Set the button pin as input with internal pull-up resistor
+}
+
+void loop() {
+  buttonState = digitalRead(buttonPin);  // Read the state of the button
+
+  if (buttonState == LOW) {  // If the button is pressed (LOW because of pull-up)
+    myServo.write(180);  // Rotate the servo to 180 degrees
+    delay(3000 );         // Wait for 1 second to prevent multiple triggers
+  }
+  else {
+    myServo.write(0);    // Reset the servo to 0 degrees when the button is not pressed
+  }
+}
