@@ -1,0 +1,26 @@
+//Like a police car LED blink
+
+#define LED_RED 9   // Connect Red LED to pin 9
+#define LED_BLUE 10 // Connect Blue LED to pin 10
+
+void setup() {
+  pinMode(LED_RED, OUTPUT);  // Set Red LED as output
+  pinMode(LED_BLUE, OUTPUT); // Set Blue LED as output
+}
+
+void loop() {
+  // Flash Red LED
+  digitalWrite(LED_RED, HIGH);
+  digitalWrite(LED_BLUE, LOW);
+  delay(200); // Wait for 200ms
+
+  // Flash Blue LED
+  digitalWrite(LED_RED, LOW);
+  digitalWrite(LED_BLUE, HIGH);
+  delay(200); // Wait for 200ms
+}
+
+
+
+
+
