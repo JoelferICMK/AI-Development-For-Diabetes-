@@ -1,0 +1,13 @@
+// Define the LED pin
+#define LED_PIN 13  // Most Arduino boards have an onboard LED on pin 13
+
+void setup() {
+  pinMode(LED_PIN, OUTPUT);  // Set LED pin as an output
+}
+
+void loop() {
+  digitalWrite(LED_PIN, HIGH);  // Turn LED on
+  delay(1000);                 // Wait for 1 second
+  digitalWrite(LED_PIN, LOW);   // Turn LED off
+  delay(1000);                 // Wait for 1 second
+}
